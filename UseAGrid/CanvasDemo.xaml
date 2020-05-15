@@ -1,0 +1,14 @@
+﻿<Window x:Class="UseAGrid.CanvasDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UseAGrid"
+        mc:Ignorable="d"
+        Title="CanvasDemo" Height="300" Width="300">
+    <Canvas Width="200" Height="200" Background="LightBlue">
+        <Button Canvas.Left="50" Canvas.Top="125" Width="100" Height="35" Content="50left|125top" Panel.ZIndex="100"/>
+        <Button Canvas.Right="25" Width="35" Height="200" Content="right25" />
+        <Button Canvas.Bottom="5" Width="75" Height="20" Content="5bottom" />
+    </Canvas>
+</Window>
