@@ -14,7 +14,14 @@
                 <Span FontSize="10">You can change the text by typing in the region at the bottom.</Span>
             </TextBlock>
         </Border>
-        <ListBox x:Name="FontList" DockPanel.Dock="Left" ItemsSource="{x:Static Fonts.SystemFontFamilies}" Width="160"/>
+        <ListBox x:Name="FontList" DockPanel.Dock="Left" DataContext="{x:Static Fonts.SystemFontFamilies}" ItemsSource="{Binding}" Width="160">
+            <ListBox.ToolTip>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Path=Count, Mode=OneTime}"/>
+                    <TextBlock Text=" fonts are installed"/>
+                </StackPanel>
+            </ListBox.ToolTip>
+        </ListBox>
         <TextBox x:Name="SampleText" DockPanel.Dock="Bottom" MinLines="4" Margin="8 0" TextWrapping="Wrap" ToolTip="Type here to change the preview text.">
             The quick brown fox jumps over the lazy dog.
         </TextBox>
