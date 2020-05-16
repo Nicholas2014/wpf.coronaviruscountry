@@ -1,0 +1,31 @@
+<Page 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowTitle="Teach Yourself WPF: Font Viewer" Height="480" Width="600">
+    <DockPanel Margin="8">        
+        <Border DockPanel.Dock="Top" BorderThickness="1" CornerRadius="6" Background="LightGray" BorderBrush="Gray"  Padding="8" Margin="0 0 0 8">
+            <TextBlock FontSize="14" TextWrapping="Wrap">
+                <Bold><Italic>Instructions:</Italic></Bold><LineBreak/>                
+                Select a <Underline>font</Underline> to view from the list <Italic>below</Italic> . 
+                <Span FontSize="10">You can change the text by typing in the region at the bottom.</Span>
+            </TextBlock>
+        </Border>
+        <ListBox x:Name="FontList" DockPanel.Dock="Left" DataContext="{x:Static Fonts.SystemFontFamilies}" ItemsSource="{Binding}" Width="160">
+            <ListBox.ToolTip>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Path=Count, Mode=OneTime}"/>
+                    <TextBlock Text=" fonts are installed"/>
+                </StackPanel>
+            </ListBox.ToolTip>
+        </ListBox>
+        <TextBox x:Name="SampleText" DockPanel.Dock="Bottom" MinLines="4" Margin="8 0" TextWrapping="Wrap" ToolTip="Type here to change the preview text.">
+            The quick brown fox jumps over the lazy dog.
+        </TextBox>
+        <StackPanel Margin="8 0 8 8">
+            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="10" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" Margin="0 0 0 4"/>
+            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="16" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" Margin="0 0 0 4"/>
+            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="24" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" Margin="0 0 0 4"/>
+            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="32" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" />
+        </StackPanel>
+    </DockPanel>
+</Page>

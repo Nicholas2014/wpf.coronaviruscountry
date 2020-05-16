@@ -22,14 +22,6 @@
                 </StackPanel>
             </ListBox.ToolTip>
         </ListBox>
-        <TextBox x:Name="SampleText" DockPanel.Dock="Bottom" MinLines="4" Margin="8 0" TextWrapping="Wrap" ToolTip="Type here to change the preview text.">
-            The quick brown fox jumps over the lazy dog.
-        </TextBox>
-        <StackPanel Margin="8 0 8 8">
-            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="10" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" Margin="0 0 0 4"/>
-            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="16" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" Margin="0 0 0 4"/>
-            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="24" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" Margin="0 0 0 4"/>
-            <TextBlock Text="{Binding ElementName=SampleText,Path=Text}" FontSize="32" FontFamily="{Binding ElementName=FontList,Path=SelectedItem}" TextWrapping="Wrap" />
-        </StackPanel>
+        <local:TextPreviewControl DataContext="{Binding ElementName=FontList}"/>
     </DockPanel>
 </Window>
