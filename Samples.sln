@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationApp", "Navigation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor", "TextEditor\TextEditor.csproj", "{83EF363E-6F01-45B3-B7E1-F1F84FC4C3E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstandingRoutedEventArgs", "UnderstandingRoutedEventArgs\UnderstandingRoutedEventArgs.csproj", "{F2A90297-B887-499B-8B1A-783EBEB6BBAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericEventHandler", "GenericEventHandler\GenericEventHandler.csproj", "{373A79FC-D68B-4937-A19B-D9B3844110D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +101,14 @@ Global
 		{83EF363E-6F01-45B3-B7E1-F1F84FC4C3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EF363E-6F01-45B3-B7E1-F1F84FC4C3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EF363E-6F01-45B3-B7E1-F1F84FC4C3E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A90297-B887-499B-8B1A-783EBEB6BBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A90297-B887-499B-8B1A-783EBEB6BBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A90297-B887-499B-8B1A-783EBEB6BBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A90297-B887-499B-8B1A-783EBEB6BBAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +127,8 @@ Global
 		{DA983284-D37D-49B4-AECA-284CAA653354} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{374D7090-6041-4C41-AC26-0EE0DD4C9FAA} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{83EF363E-6F01-45B3-B7E1-F1F84FC4C3E3} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
+		{F2A90297-B887-499B-8B1A-783EBEB6BBAD} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
+		{373A79FC-D68B-4937-A19B-D9B3844110D0} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CDB34A3-280E-4379-9CDE-AD602264D7EA}
