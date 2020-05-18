@@ -8,10 +8,11 @@
         Title="MainWindow" Height="600" Width="800">
     <DockPanel>        
         <local:TextEditorMenu x:Name="menu" DockPanel.Dock="Top"/>
-        <local:TextEditorToolBar x:Name="toolbar" DockPanel.Dock="Top"/>
+        <local:TextEditorToolBar x:Name="toolbar" DockPanel.Dock="Top" ComboBox.SelectionChanged="TextEditorToolbar_SelectionChanged"/>
         <StatusBar  DockPanel.Dock="Bottom">
             <TextBlock x:Name="status"/>
         </StatusBar>
-        <RichTextBox x:Name="body" AcceptsReturn="True" AcceptsTab="True" SpellCheck.IsEnabled="True" BorderThickness="0 2 0 0"/>
+        <RichTextBox x:Name="body" AcceptsReturn="True" AcceptsTab="True" 
+                     SpellCheck.IsEnabled="True" BorderThickness="0 2 0 0" SelectionChanged="body_SelectionChanged"/>
     </DockPanel>
 </Window>

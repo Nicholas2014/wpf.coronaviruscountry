@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstandingRoutedEventArg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericEventHandler", "GenericEventHandler\GenericEventHandler.csproj", "{373A79FC-D68B-4937-A19B-D9B3844110D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewEvents", "PreviewEvents\PreviewEvents.csproj", "{35435DAC-FF72-4532-A220-100BF24F99F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,10 @@ Global
 		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{373A79FC-D68B-4937-A19B-D9B3844110D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35435DAC-FF72-4532-A220-100BF24F99F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35435DAC-FF72-4532-A220-100BF24F99F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35435DAC-FF72-4532-A220-100BF24F99F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35435DAC-FF72-4532-A220-100BF24F99F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +135,7 @@ Global
 		{83EF363E-6F01-45B3-B7E1-F1F84FC4C3E3} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{F2A90297-B887-499B-8B1A-783EBEB6BBAD} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{373A79FC-D68B-4937-A19B-D9B3844110D0} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
+		{35435DAC-FF72-4532-A220-100BF24F99F2} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CDB34A3-280E-4379-9CDE-AD602264D7EA}
