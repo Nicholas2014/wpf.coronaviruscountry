@@ -8,12 +8,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Menu>
         <MenuItem Header="_File">
-            <MenuItem Header="_New" Command="ApplicationCommands.New"/>
-            <MenuItem Header="_Open" Command="ApplicationCommands.Open"/>
-            <MenuItem Header="_Save" Command="ApplicationCommands.Save"/>
-            <MenuItem Header="_SaveAs" Command="ApplicationCommands.SaveAs"/>
+            <MenuItem Command="ApplicationCommands.New"/>
+            <MenuItem Command="ApplicationCommands.Open"/>
+            <MenuItem Command="ApplicationCommands.Save"/>
+            <MenuItem Command="ApplicationCommands.SaveAs"/>
             <Separator/>
-            <MenuItem Header="_Print"/>
+            <MenuItem Command="ApplicationCommands.PrintPreview"/>
+            <MenuItem Command="ApplicationCommands.Print"/>
             <Separator/>
             <MenuItem Header="_Close" Command="ApplicationCommands.Close"/>
         </MenuItem>
@@ -29,5 +30,6 @@
         <MenuItem Header="_Help">
             <MenuItem Header="_About" Click="MenuItem_Click"/>
         </MenuItem>
+        <MenuItem Header="Throw Exception" Click="Exception_Click"/>
     </Menu>
 </UserControl>

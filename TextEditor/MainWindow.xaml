@@ -11,6 +11,8 @@
         <CommandBinding Command="ApplicationCommands.Open" Executed="OpenDocument"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="SaveDocument" CanExecute="SaveDocument_CanExecute"/>
         <CommandBinding Command="ApplicationCommands.SaveAs" Executed="SaveAsDocument"/>
+        <CommandBinding Command="ApplicationCommands.Print" Executed="PrintDocument"/>
+        <CommandBinding Command="ApplicationCommands.PrintPreview" Executed="PrintPreview"/>
         <CommandBinding Command="ApplicationCommands.Close" Executed="ApplicationClose"/>
     </Window.CommandBindings>
     <Window.InputBindings>

@@ -29,5 +29,10 @@ namespace TextEditor
         {
             MessageBox.Show("Teach Your self WPF in 24 Hours.");
         }
+
+        private void Exception_Click(object sender, RoutedEventArgs e)
+        {
+            throw new Exception();
+        }
     }
 }

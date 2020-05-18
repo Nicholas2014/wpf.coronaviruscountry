@@ -21,6 +21,7 @@ namespace TextEditor
     public partial class MainWindow : Window
     {
         private DocumentManager _documentManager { get; set; }
+        private PrintManager _printManager { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +31,8 @@ namespace TextEditor
             {
                 status.Text = "Document Loaded.";
             }
+
+            _printManager = new PrintManager(body);
         }
 
         private void TextEditorToolbar_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,6 +87,18 @@ namespace TextEditor
         {
             _documentManager.SaveDocumentAs();
             status.Text = "Document Saved";
+        }
+        private void PrintDocument(object sender, ExecutedRoutedEventArgs e)
+        {
+            var printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintDocument(((IDocumentPaginatorSource)body.Document).DocumentPaginator, "Text Editor Printing");
+            }
+        }
+        private void PrintPreview(object sender, ExecutedRoutedEventArgs e)
+        {
+            _printManager.PrintPreview();
         }
         private void ApplicationClose(object sender, ExecutedRoutedEventArgs e)
         {
