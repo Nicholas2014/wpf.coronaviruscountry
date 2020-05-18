@@ -21,6 +21,12 @@ namespace TextEditor
             this.text = text;
         }
 
+        public void NewDocument() 
+        {
+            _currentFile = null;
+            text.Document = new FlowDocument();
+        }
+
         public bool OpenDocument()
         {
             var ofd = new OpenFileDialog();
@@ -77,5 +83,11 @@ namespace TextEditor
                 text.Selection.ApplyPropertyValue(property, value);
             }
         }
+
+        public bool CanSaveDocument()
+        {
+            return !string.IsNullOrEmpty(_currentFile);
+        }
+
     }
 }

@@ -64,5 +64,35 @@ namespace TextEditor
         {
             toolbar.SynchronizeWith(body.Selection);
         }
+
+        private void NewDocument(object sender, ExecutedRoutedEventArgs e)
+        {
+            _documentManager.NewDocument();
+            status.Text = "New Document";
+        }
+        private void OpenDocument(object sender, ExecutedRoutedEventArgs e)
+        {
+            _documentManager.OpenDocument();
+            status.Text = "Document Loaded";
+        }
+        private void SaveDocument(object sender, ExecutedRoutedEventArgs e)
+        {
+            _documentManager.SaveDocument();
+            status.Text = "Document Saved";
+        }
+        private void SaveAsDocument(object sender, ExecutedRoutedEventArgs e)
+        {
+            _documentManager.SaveDocumentAs();
+            status.Text = "Document Saved";
+        }
+        private void ApplicationClose(object sender, ExecutedRoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void SaveDocument_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = _documentManager.CanSaveDocument();
+        }
     }
 }

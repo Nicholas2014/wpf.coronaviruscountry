@@ -8,23 +8,23 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Menu>
         <MenuItem Header="_File">
-            <MenuItem Header="_New"/>
-            <MenuItem Header="_Open"/>
-            <MenuItem Header="_Save"/>
-            <MenuItem Header="_SaveAs"/>
+            <MenuItem Header="_New" Command="ApplicationCommands.New"/>
+            <MenuItem Header="_Open" Command="ApplicationCommands.Open"/>
+            <MenuItem Header="_Save" Command="ApplicationCommands.Save"/>
+            <MenuItem Header="_SaveAs" Command="ApplicationCommands.SaveAs"/>
             <Separator/>
             <MenuItem Header="_Print"/>
             <Separator/>
-            <MenuItem Header="_Close"/>
+            <MenuItem Header="_Close" Command="ApplicationCommands.Close"/>
         </MenuItem>
         <MenuItem Header="_Edit">
-            <MenuItem Header="_Undo"/>
-            <MenuItem Header="_Redo"/>
+            <MenuItem Command="ApplicationCommands.Undo"/>
+            <MenuItem Command="ApplicationCommands.Redo"/>
             <Separator/>
-            <MenuItem Header="Cu_t"/>
-            <MenuItem Header="_Copy"/>
-            <MenuItem Header="_Paste"/>
-            <MenuItem Header="_Delete"/>
+            <MenuItem Command="ApplicationCommands.Cut"/>
+            <MenuItem Command="ApplicationCommands.Copy"/>
+            <MenuItem Command="ApplicationCommands.Paste"/>
+            <MenuItem Command="EditingCommands.Delete"/>
         </MenuItem>
         <MenuItem Header="_Help">
             <MenuItem Header="_About" Click="MenuItem_Click"/>
