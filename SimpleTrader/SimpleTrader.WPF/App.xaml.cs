@@ -14,6 +14,7 @@ using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.EntityFramework;
 using SimpleTrader.EntityFramework.Services;
 using SimpleTrader.FinancialModelingPrepAPI.Services;
+using SimpleTrader.WPF.State.Authenticators;
 using SimpleTrader.WPF.State.Navigators;
 using SimpleTrader.WPF.ViewModels;
 using SimpleTrader.WPF.ViewModels.Factories;
@@ -36,7 +37,7 @@ namespace SimpleTrader.WPF
 
             IAuthenticationService authenticationService = serviceProvider.GetRequiredService<IAuthenticationService>();
             //await authenticationService.Register("test@126.com", "testuser", "123456", "123456");
-            await authenticationService.Login("testuser", "123456");
+            //await authenticationService.Login("testuser", "123456");
 
             //var buyStockService = serviceProvider.GetRequiredService<IBuyStockService>();
             //var accountDataService = serviceProvider.GetRequiredService<IDataService<Account>>();
@@ -68,8 +69,10 @@ namespace SimpleTrader.WPF
             services.AddSingleton<ISimpleTraderViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
             services.AddSingleton<ISimpleTraderViewModelFactory<PortfolioViewModel>, PortfolioViewModelFactory>();
             services.AddSingleton<ISimpleTraderViewModelFactory<MajorIndexListingViewModel>, MajorIndexListingViewModelFactory>();
+            services.AddSingleton<ISimpleTraderViewModelFactory<LoginViewModel>, LoginViewModelFactory>();
 
             services.AddScoped<INavigator, Navigator>();
+            services.AddScoped<IAuthenticator, Authenticator>();
             services.AddScoped<MainViewModel>();
             services.AddScoped<BuyViewModel>();
 
