@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericEventHandler", "Gene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewEvents", "PreviewEvents\PreviewEvents.csproj", "{35435DAC-FF72-4532-A220-100BF24F99F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "ContactManager\ContactManager.csproj", "{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,10 @@ Global
 		{35435DAC-FF72-4532-A220-100BF24F99F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35435DAC-FF72-4532-A220-100BF24F99F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35435DAC-FF72-4532-A220-100BF24F99F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +142,7 @@ Global
 		{F2A90297-B887-499B-8B1A-783EBEB6BBAD} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{373A79FC-D68B-4937-A19B-D9B3844110D0} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{35435DAC-FF72-4532-A220-100BF24F99F2} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
+		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CDB34A3-280E-4379-9CDE-AD602264D7EA}
