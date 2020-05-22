@@ -84,7 +84,9 @@
                     <Label Grid.Row="2" Content="Ci_ty:" Target="{Binding ElementName=city}" />
                     <TextBox x:Name="city" Grid.Row="2" Grid.Column="1"  Text="{Binding Contact.Address.City}"/>
                     <Label Content="_State:" Grid.Row="2" Grid.Column="2" Target="{Binding ElementName=state}"/>
-                    <ComboBox x:Name="state" Grid.Row="2" Grid.Column="3" Text="{Binding Contact.Address.State}"/>
+                    <ComboBox x:Name="state" Grid.Row="2" Grid.Column="3" 
+                              Text="{Binding Contact.Address.State}" 
+                              ItemsSource="{Binding Source={StaticResource stateNames}}"/>
                     <Label Grid.Row="3" Content="_Zip:" Target="{Binding ElementName=zip}" />
                     <TextBox x:Name="zip" Grid.Row="3" Grid.Column="1"  Text="{Binding Contact.Address.Zip}"/>
                     <Label Grid.Row="3" Grid.Column="2" Content="Countr_y:" Target="{Binding ElementName=country}" />
