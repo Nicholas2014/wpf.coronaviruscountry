@@ -11,7 +11,7 @@
         <uc:SearchBar DockPanel.Dock="Top"/>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem DockPanel.Dock="Right">
-                <Slider DockPanel.Dock="Right" Width="125" Value="1" Minimum=".5" Maximum="2"/>
+                <Slider x:Name="zoomSlider" Width="125" Value="1" Minimum=".5" Maximum="2"/>
             </StatusBarItem>
             <StatusBarItem  DockPanel.Dock="Right">
                 <TextBlock>Zoom:</TextBlock>
@@ -30,7 +30,7 @@
             </Expander.Header>
             <uc:SideBar/>
         </Expander>
-        <TabControl x:Name="tabs" Grid.Column="2" Margin="5 0">
+        <TabControl x:Name="tabs"  Margin="5 0">
             <TabControl.LayoutTransform>
                 <ScaleTransform ScaleX="{Binding ElementName=zoomSlider,Path=Value}" ScaleY="{Binding ElementName=zoomSlider,Path=Value}"/>                
             </TabControl.LayoutTransform>
