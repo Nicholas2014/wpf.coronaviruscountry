@@ -101,7 +101,7 @@ namespace ContactManager.Presenters
 
         public void DisplayAllContacts()
         {
-
+            View.AddTab(new ContactListPresenter(this, new ContactListView()));
         }
 
 

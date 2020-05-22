@@ -56,7 +56,7 @@
         <Setter Property="TextBlock.FontWeight" Value="Bold"/>
     </Style>
 
-    <!--样式继承-->
+    <!--样式继承--><!--
     <Style x:Key="baseControlStyle" TargetType="{x:Type Control}">
         <Setter Property="FontFamily" Value="Arial"/>
         <Setter Property="FontSize" Value="12"/>
@@ -67,5 +67,5 @@
     <Style TargetType="{x:Type Label}" BasedOn="{StaticResource baseControlStyle}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="FontWeight" Value="Bold"/>
-    </Style>
+    </Style>-->
 </ResourceDictionary>
