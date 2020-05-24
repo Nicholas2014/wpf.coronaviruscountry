@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using MediaViewer.Views;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,7 +20,7 @@ namespace MediaViewer.Presenters
 
         public void ShowMenu()
         {
-
+            new MenuPresenter(this);
         }
 
         public void DisplayInShell(object view)
