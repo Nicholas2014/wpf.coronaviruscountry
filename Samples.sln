@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreviewEvents", "PreviewEve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager", "ContactManager\ContactManager.csproj", "{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaViewer", "MediaViewer\MediaViewer.csproj", "{44F4C2D1-FCF8-443B-B849-3F2C9F83D62E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,10 @@ Global
 		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F4C2D1-FCF8-443B-B849-3F2C9F83D62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F4C2D1-FCF8-443B-B849-3F2C9F83D62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F4C2D1-FCF8-443B-B849-3F2C9F83D62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F4C2D1-FCF8-443B-B849-3F2C9F83D62E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +149,7 @@ Global
 		{373A79FC-D68B-4937-A19B-D9B3844110D0} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{35435DAC-FF72-4532-A220-100BF24F99F2} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{6AD8A75D-8686-4FA7-BC0B-7ED5CEBA90EA} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
+		{44F4C2D1-FCF8-443B-B849-3F2C9F83D62E} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CDB34A3-280E-4379-9CDE-AD602264D7EA}
