@@ -1,0 +1,29 @@
+﻿<Window x:Class="LayoutTransformDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutTransformDemo"
+        mc:Ignorable="d"
+        Title="Layout Transform" Height="600" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button>
+            <Button.LayoutTransform>
+                <SkewTransform AngleX="45"/>
+            </Button.LayoutTransform>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1">
+            <Button.RenderTransform>
+                <RotateTransform Angle="45"/>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</Window>

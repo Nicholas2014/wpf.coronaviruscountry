@@ -1,0 +1,41 @@
+﻿<Window x:Class="TransformDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformDemo"
+        mc:Ignorable="d"
+        Title="Transforms" TextBlock.FontSize="20" SizeToContent="WidthAndHeight">
+    <Canvas Width="800" Height="600">
+        <TextBlock Text="No Transform"/>
+        <TextBlock Text="Translate Transform">
+            <TextBlock.RenderTransform>
+                <TranslateTransform X="50" Y="25"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Text="Skew Transform" Canvas.Left="200" Canvas.Top="100">
+            <TextBlock.RenderTransform>
+                <SkewTransform AngleX="45"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Text="Rotate Transform" Canvas.Left="200" Canvas.Top="200">
+            <TextBlock.RenderTransform>
+                <RotateTransform Angle="45"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Text="Scale Transform" Canvas.Left="200" Canvas.Top="300">
+            <TextBlock.RenderTransform>
+                <ScaleTransform ScaleX="2" ScaleY="11"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Text="Transform Group">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform X="400"/>
+                    <RotateTransform Angle="45"/>
+                    <SkewTransform AngleX="45"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+    </Canvas>
+</Window>

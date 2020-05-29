@@ -9,5 +9,11 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource textBrush}"/>
+        <Setter Property="BitmapEffect">
+            <Setter.Value>
+                <OuterGlowBitmapEffect GlowColor="{StaticResource textColor}" Opacity="0.5"/>
+            </Setter.Value>
+        </Setter>
     </Style>
+    
 </ResourceDictionary>
