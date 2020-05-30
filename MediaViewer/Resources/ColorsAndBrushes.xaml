@@ -68,4 +68,15 @@
             </DrawingGroup>
         </DrawingBrush.Drawing>
     </DrawingBrush>
+    <LinearGradientBrush x:Key="mediaButtonHover" StartPoint="0.5 0" EndPoint="0.5 1">
+        <GradientStop Color="#C0FFFFFF" Offset="0"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.33"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.66"/>
+        <GradientStop Color="#C0FFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="sliderBg" StartPoint="0.5 0" EndPoint="0.5 1">
+        <GradientStop Color="{StaticResource redColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource orangeColor}" Offset="0.5"/>
+        <GradientStop Color="{StaticResource redColor}" Offset="1"/>
+    </LinearGradientBrush>
 </ResourceDictionary>

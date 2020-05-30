@@ -27,13 +27,13 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Click="Stop_Click">
+                <Button Grid.Column="0" Click="Stop_Click" Style="{StaticResource mediaButtonStyle}">
                     <!--<Rectangle Width="18" Height="20" Fill="{StaticResource redBrush}" Stroke="{StaticResource orangeBrush}" StrokeThickness="1" RadiusX="1" RadiusY="1"/>-->
                     <Border Width="18" Height="20" Background="{StaticResource redRadial}" CornerRadius="1" BorderBrush="{StaticResource controlOutline}" BorderThickness="1">
                         <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 1 0 0" Width="15" Height="10" RadiusX="1" RadiusY="1" Fill="{StaticResource glossBrush}"/>
                     </Border>
                 </Button>
-                <Button Grid.Column="1" Click="Play_Click">
+                <Button Grid.Column="1" Click="Play_Click" Style="{StaticResource fancyButtonStyle}">
                     <Grid Margin="4 0 0 0">
                         <Polygon Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Points="0,0 18,10 0,18"/>
                         <Canvas Visibility="Hidden">
@@ -42,7 +42,7 @@
                         </Canvas>
                     </Grid>
                 </Button>
-                <ToggleButton Grid.Column="2" IsChecked="{Binding ElementName=mediaElement,Path=IsMuted}">
+                <ToggleButton Grid.Column="2" Style="{StaticResource mediaButtonStyle}" IsChecked="{Binding ElementName=mediaElement,Path=IsMuted}">
                     <Canvas Width="20" Height="20">
                         <!--the speaker-->
                         <Path Fill="{StaticResource redRadial}" Stroke="{StaticResource controlOutline}" StrokeLineJoin="Round">

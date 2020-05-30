@@ -1,0 +1,54 @@
+﻿<Window x:Class="ControlTemplates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlTemplates"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <Window.Resources>
+        <Canvas x:Key="smiley" Width="48" Height="48">
+            <Ellipse Width="48" Height="48" Fill="Yellow"/>
+            <Ellipse Width="8" Height="8" Fill="Black" Canvas.Top="12" Canvas.Left="12"/>
+            <Ellipse Width="8" Height="8" Fill="Black" Canvas.Top="12" Canvas.Right="12"/>
+            <Path Data="M10,30 C18,38 30,38 38,30" Stroke="Black"/>
+        </Canvas>
+    </Window.Resources>
+    <!--<Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Smiley">
+        <Button.Template>
+            <ControlTemplate TargetType="{x:Type Button}">
+                <Grid>
+                    <Border Background="Transparent" Padding="4" CornerRadius="4" Child="{StaticResource smiley}"/>
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </ControlTemplate>
+        </Button.Template>
+    </Button>-->
+
+    <StackPanel>
+        <StackPanel.Resources>
+            <ControlTemplate x:Key="circleButtonTemplate" TargetType="{x:Type Button}">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" 
+                      MinWidth="{TemplateBinding MinWidth}" MinHeight="{TemplateBinding MinHeight}">
+                    <Ellipse Fill="{TemplateBinding Background}"/>
+                    <ContentPresenter TextBlock.FontSize="{TemplateBinding FontSize}" 
+                                      TextBlock.Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </ControlTemplate>
+            <Style x:Key="defaultButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template" Value="{StaticResource circleButtonTemplate}"/>
+                <Setter Property="Background" Value="Red"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="MinWidth" Value="36"/>
+                <Setter Property="MinHeight" Value="36"/>
+            </Style>
+            <Style x:Key="newCircleButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource defaultButtonStyle}">
+                <Setter Property="Background" Value="Green"/>
+            </Style>
+        </StackPanel.Resources>
+        <Button  Content="1" Style="{StaticResource defaultButtonStyle}"/>
+        <Button  Content="2" Style="{StaticResource newCircleButtonStyle}"/>
+        <Button  Content="3" Style="{StaticResource defaultButtonStyle}"/>
+    </StackPanel>
+</Window>
