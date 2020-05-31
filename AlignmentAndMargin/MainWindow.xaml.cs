@@ -24,5 +24,10 @@ namespace AlignmentAndMargin
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("password is: " + pwd.Password + " securepassword: " + pwd.SecurePassword.ToString());
+        }
     }
 }

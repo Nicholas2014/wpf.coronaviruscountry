@@ -35,44 +35,81 @@
                 </Button>
                 <Button Grid.Column="1" Click="Play_Click" Style="{StaticResource fancyButtonStyle}">
                     <Grid Margin="4 0 0 0">
-                        <Polygon Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Points="0,0 18,10 0,18"/>
-                        <Canvas Visibility="Hidden">
+                        <Polygon Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Points="0,0 18,10 0,18">
+                            <Polygon.Style>
+                                <Style TargetType="{x:Type Polygon}">
+                                    <Style.Triggers>
+                                        <Trigger Property="DataContext" Value="Playing">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Polygon.Style>
+                        </Polygon>
+                        <Canvas>
                             <Rectangle Height="18" Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Width="6"/>
                             <Rectangle Height="18" Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Width="6" Canvas.Left="8"/>
+                            <Canvas.Style>
+                                <Style TargetType="{x:Type Canvas}">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="DataContext" Value="Playing">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Canvas.Style>
                         </Canvas>
                     </Grid>
                 </Button>
                 <ToggleButton Grid.Column="2" Style="{StaticResource mediaButtonStyle}" IsChecked="{Binding ElementName=mediaElement,Path=IsMuted}">
-                    <Canvas Width="20" Height="20">
-                        <!--the speaker-->
-                        <Path Fill="{StaticResource redRadial}" Stroke="{StaticResource controlOutline}" StrokeLineJoin="Round">
-                            <Path.Data>
-                                <PathGeometry>
-                                    <PathFigure StartPoint="12,5" IsClosed="True">
-                                        <LineSegment Point="0,6"/>
-                                        <PolyLineSegment Points="0,14 12,15 17,20"/>
-                                        <ArcSegment Point="17,0" Size="30,30"/>
-                                    </PathFigure>
-                                </PathGeometry>
-                            </Path.Data>
-                        </Path>
-                        <!--highlight-->
-                        <Path Fill="{StaticResource glossBrush}">
-                            <Path.Data>
-                                <PathGeometry>
-                                    <PathFigure StartPoint="13,6" IsClosed="True">
-                                        <PolyLineSegment Points="1,7 1,11 17.5,11"/>
-                                        <ArcSegment Point="16.5,2" Size="30,30"/>
-                                    </PathFigure>
-                                </PathGeometry>
-                            </Path.Data>
-                        </Path>
-                        <!--sound waves-->
-                        <Polygon Points="20,5 25,0 27,3" Fill="{StaticResource textBrush}"/>
-                        <Polygon Points="20,10 28,9 27,6" Fill="{StaticResource textBrush}"/>
-                        <Polygon Points="20,13 26,17 27,13" Fill="{StaticResource textBrush}"/>
-                        <Polygon Points="20,17 24,21 26,18" Fill="{StaticResource textBrush}"/>
-                    </Canvas>
+                    <Grid>
+                        <Canvas Width="20" Height="20">
+                            <!--the speaker-->
+                            <Path Fill="{StaticResource redRadial}" Stroke="{StaticResource controlOutline}" StrokeLineJoin="Round">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="12,5" IsClosed="True">
+                                            <LineSegment Point="0,6"/>
+                                            <PolyLineSegment Points="0,14 12,15 17,20"/>
+                                            <ArcSegment Point="17,0" Size="30,30"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <!--highlight-->
+                            <Path Fill="{StaticResource glossBrush}">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="13,6" IsClosed="True">
+                                            <PolyLineSegment Points="1,7 1,11 17.5,11"/>
+                                            <ArcSegment Point="16.5,2" Size="30,30"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <!--sound waves-->
+                            <Polygon Points="20,5 25,0 27,3" Fill="{StaticResource textBrush}"/>
+                            <Polygon Points="20,10 28,9 27,6" Fill="{StaticResource textBrush}"/>
+                            <Polygon Points="20,13 26,17 27,13" Fill="{StaticResource textBrush}"/>
+                            <Polygon Points="20,17 24,21 26,18" Fill="{StaticResource textBrush}"/>
+                        </Canvas>
+                        <Canvas>
+                            <Canvas.Style>
+                                <Style TargetType="{x:Type Canvas}">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=mediaElement,Path=IsMuted}" Value="true">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Canvas.Style>
+                            <Ellipse Width="20" Height="20" Stroke="{DynamicResource bgBrush}" StrokeThickness="3" Canvas.Left="0" Canvas.Top="0"/>
+                            <Path Width="13.498" Height="16.446" Fill="{x:Null}" Stroke="{DynamicResource bgBrush}" StrokeThickness="3" Canvas.Left="3.442" Canvas.Top="1.319"
+                                  Data="M4.9424596,16.265143 L15.440304,2.8191997"/>
+                        </Canvas>
+                    </Grid>
                 </ToggleButton>
             </Grid>                       
             <Slider Grid.Column="2" VerticalAlignment="Center" Margin="0 0 10 0" Minimum="0" Maximum="1" Value="{Binding ElementName=mediaElement,Path=Volume}"/>

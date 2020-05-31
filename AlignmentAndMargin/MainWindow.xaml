@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlignmentAndMargin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button  
-                HorizontalAlignment="Center" VerticalAlignment="Center" 
-                 Content="OK"/>
-    </Grid>
+        Title="MainWindow" Height="300" Width="300">
+    <StackPanel Orientation="Vertical">
+        <PasswordBox x:Name="pwd" Margin="10" PasswordChar="-" MaxLength="100">
+            <PasswordBox.ToolTip>
+                <TextBlock Text="{Binding ElementName=pwd,Path=Password,UpdateSourceTrigger=LostFocus}"/>
+            </PasswordBox.ToolTip>
+        </PasswordBox>
+        <TextBox x:Name="txt" Background="LightGoldenrodYellow" Margin="10 0 10 10"/>
+        <TextBox Margin="10,0,10,10" Text="{Binding ElementName=txt,Path=Text,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Margin="10,0" Text="{Binding ElementName=pwd,Path=PasswordChar,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Margin="10 10" HorizontalAlignment="Stretch"  VerticalAlignment="Center" Click="Button_Click" Content="OK"/>
+    </StackPanel>
 </Window>

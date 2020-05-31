@@ -27,7 +27,7 @@
                     <DataTemplate>
                         <Grid Margin="2">
                             <Border Margin="2 2 0 0" CornerRadius="4" Background="Gray" Opacity=".5"/>
-                            <Border BorderBrush="{StaticResource redBrush}" BorderThickness="2" CornerRadius="4" Background="White" Margin="0 0 2 2" Padding="3">
+                            <Border x:Name="border" BorderBrush="{StaticResource redBrush}" BorderThickness="2" CornerRadius="4" Background="White" Margin="0 0 2 2" Padding="3">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto"/>
@@ -47,7 +47,29 @@
                             </Border>
                             <Button Style="{StaticResource openButton}"/>
                         </Grid>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Address.State}" Value="巴西">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Orange"/>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
                     </DataTemplate>
+                    <!--MultiDataTrigger-->
+                    <!--<DataTemplate DataType="{x:Type local:Contact}">
+                        <Border x:Name="border" Background="Green">
+                            <TextBox Foreground="White" Text="{Binding LookupName}" />
+                        </Border>
+                        <DataTemplate.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding Organization}" Value="Blue Spire Consulting, Inc." />
+                                    <Condition Binding="{Binding Address.City}" Value="Tallahassee" />
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.Setters>
+                                    <Setter TargetName="border" Property="Background" Value="Blue" />
+                                </MultiDataTrigger.Setters>
+                            </MultiDataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>-->
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
