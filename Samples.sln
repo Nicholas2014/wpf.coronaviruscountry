@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitmapEffectDemo", "BitmapE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTemplates", "ControlTemplates\ControlTemplates.csproj", "{C9784606-4B51-4B70-B98C-5C14D3E41817}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningAnimation", "LearningAnimation\LearningAnimation.csproj", "{57F76F04-F9DC-4753-9151-9E35ADC553D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,10 @@ Global
 		{C9784606-4B51-4B70-B98C-5C14D3E41817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9784606-4B51-4B70-B98C-5C14D3E41817}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9784606-4B51-4B70-B98C-5C14D3E41817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F76F04-F9DC-4753-9151-9E35ADC553D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F76F04-F9DC-4753-9151-9E35ADC553D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F76F04-F9DC-4753-9151-9E35ADC553D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F76F04-F9DC-4753-9151-9E35ADC553D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +191,7 @@ Global
 		{6FD2B513-CCB2-4B5D-BD10-B2C62627AAEB} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{FFA28974-A575-4230-892B-0DD4635297CC} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 		{C9784606-4B51-4B70-B98C-5C14D3E41817} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
+		{57F76F04-F9DC-4753-9151-9E35ADC553D3} = {62FFBD77-B05B-49A8-AC09-D338EBC92E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CDB34A3-280E-4379-9CDE-AD602264D7EA}
