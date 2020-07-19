@@ -11,19 +11,35 @@ namespace SimpleTrader.WPF.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public INavigator Navigator { get; set; }
+        private IAuthenticator _authenticator { get; }
+        private INavigator _navigator { get; set; }
+
+        public bool IsLoggedIn => _authenticator.IsLoggedIn;
+        public ViewModelBase CurrentViewModel => _navigator.CurrentViewModel;
         public ISimpleTraderViewModelFactory _viewModelFactory { get; }
-        public IAuthenticator Authenticator { get; }
         public ICommand UpdateCurrentViewModelCommand { get; }
 
-        public MainViewModel(INavigator navigator,ISimpleTraderViewModelFactory viewModelFactory,IAuthenticator authenticator)
+        public MainViewModel(INavigator navigator, ISimpleTraderViewModelFactory viewModelFactory, IAuthenticator authenticator)
         {
-            Navigator = navigator;
+            _navigator = navigator;
             _viewModelFactory = viewModelFactory;
-            Authenticator = authenticator;
+            _authenticator = authenticator;
+
+            _navigator.StateChanged += Navigator_StateChanged;
+            _authenticator.StateChanged += Authenticator_StateChanged;
 
             UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(navigator, _viewModelFactory);
             UpdateCurrentViewModelCommand.Execute(ViewType.Login);
+        }
+
+        private void Authenticator_StateChanged()
+        {
+            OnPropertyChanged(nameof(IsLoggedIn));
+        }
+
+        private void Navigator_StateChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }

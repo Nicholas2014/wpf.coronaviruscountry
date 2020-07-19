@@ -19,13 +19,8 @@ namespace SimpleTrader.WPF.State.Navigators
         Portfolio,
         Buy
     }
-    public class Navigator : ObservableObject, INavigator
+    public class Navigator :  INavigator
     {
-        //public Navigator(IRootSimpleTraderViewModelFactory viewModelFactory)
-        //{
-        //    //UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(this, viewModelFactory);
-        //}
-
         private ViewModelBase _currentViewModel;
         public ViewModelBase CurrentViewModel
         {
@@ -33,11 +28,10 @@ namespace SimpleTrader.WPF.State.Navigators
             set
             {
                 _currentViewModel = value;
-                OnPropertyChanged(nameof(CurrentViewModel));
+                StateChanged?.Invoke();
             }
         }
 
-        //public ICommand UpdateCurrentViewModelCommand { get; set; }
+        public event Action StateChanged;        
     }
-
 }

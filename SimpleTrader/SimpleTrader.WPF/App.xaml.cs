@@ -13,7 +13,9 @@ using SimpleTrader.Domain.Services.AuthenticationServices;
 using SimpleTrader.Domain.Services.TransactionServices;
 using SimpleTrader.EntityFramework;
 using SimpleTrader.EntityFramework.Services;
+using SimpleTrader.FinancialModelingPrepAPI;
 using SimpleTrader.FinancialModelingPrepAPI.Services;
+using SimpleTrader.WPF.State.Accounts;
 using SimpleTrader.WPF.State.Authenticators;
 using SimpleTrader.WPF.State.Navigators;
 using SimpleTrader.WPF.ViewModels;
@@ -36,7 +38,7 @@ namespace SimpleTrader.WPF
 
             IServiceProvider serviceProvider = CreateServiceProvider();
 
-            IAuthenticationService authenticationService = serviceProvider.GetRequiredService<IAuthenticationService>();
+            //IAuthenticationService authenticationService = serviceProvider.GetRequiredService<IAuthenticationService>();
             //await authenticationService.Register("test@126.com", "testuser", "123456", "123456");
             //await authenticationService.Login("testuser", "123456");
 
@@ -57,6 +59,9 @@ namespace SimpleTrader.WPF
         private IServiceProvider CreateServiceProvider()
         {
             IServiceCollection services = new ServiceCollection();
+
+            var apikey =  ConfigurationManager.AppSettings.Get("financeApiKey");
+            services.AddSingleton<FinancialModelingPrepHttpClientFactory>(new FinancialModelingPrepHttpClientFactory(apikey));
 
             services.AddSingleton<SimpleTradeDbContextFactory>();
             services.AddSingleton<IStockPriceService, StockPriceService>();
@@ -98,6 +103,7 @@ namespace SimpleTrader.WPF
 
             services.AddScoped<INavigator, Navigator>();
             services.AddScoped<IAuthenticator, Authenticator>();
+            services.AddSingleton<IAccountStore, AccountStore>();
             services.AddScoped<MainViewModel>();
             services.AddScoped<BuyViewModel>();
 
