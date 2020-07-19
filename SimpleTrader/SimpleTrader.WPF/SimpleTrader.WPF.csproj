@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewModels\Factories\HomeViewModelFactory.cs" />
+    <Compile Remove="ViewModels\Factories\LoginViewModelFactory.cs" />
+    <Compile Remove="ViewModels\Factories\MajorIndexListingViewModelFactory.cs" />
+    <Compile Remove="ViewModels\Factories\PortfolioViewModelFactory.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\bg.jpeg" />
   </ItemGroup>
 
