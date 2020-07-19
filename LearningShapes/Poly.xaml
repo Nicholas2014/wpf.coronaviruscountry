@@ -1,0 +1,27 @@
+﻿<Window x:Class="LearningShapes.Poly"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearningShapes"
+        mc:Ignorable="d"
+        Title="Poly" Height="300" Width="300" Background="Pink">
+    <!--<WrapPanel>
+        <Polyline Points="10 10 50 10 50 60 10 60" Stroke="Red" StrokeThickness="4" Fill="Orange"/>
+        <Polygon Points="10 10 50 10  50 60 10 60" Fill="Yellow" Stroke="Green" StrokeThickness="4" 
+                 StrokeLineJoin="Round"/>
+        <Polygon Points="10 10, 30 20, 50 10, 50 60, 30 50, 10 60"
+        Stroke="Green" StrokeThickness="6" StrokeLineJoin="Miter" StrokeMiterLimit="1" Fill="Yellow" />
+        <Polygon Points="10 10, 30 60, 50 10, 50 60, 30 10, 10 60" Fill="Yellow"/>
+        <Polygon Margin="10 10 0 0" Points="25 0, 33 17, 50 19, 38 32, 40 50,25 42, 10 50, 12 32, 0 19, 17 17" Fill="Yellow" />
+    </WrapPanel>-->
+    <Viewbox>
+        <WrapPanel>
+            <Polyline Points="10 10 50 10 50 60 10 60" Stroke="Red" StrokeThickness="4" Fill="Orange"/>
+            <Polygon Points="10 10 50 10  50 60 10 60" Fill="Yellow" Stroke="Green" StrokeThickness="6" StrokeLineJoin="Round"/>
+            <Polygon Points="10 10, 30 20, 50 10, 50 60, 30 50, 10 60" Stroke="Green" StrokeThickness="6" StrokeLineJoin="Miter" StrokeMiterLimit="1" Fill="Yellow" />
+            <Polygon Points="10 10, 30 60, 50 10, 50 60, 30 10, 10 60" Fill="Yellow"/>
+            <Polygon Margin="10 10 0 0" Points="25 0, 33 17, 50 19, 38 32, 40 50,25 42, 10 50, 12 32, 0 19, 17 17" Fill="Yellow" />
+        </WrapPanel>
+    </Viewbox>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="LearningShapes.PolylineDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearningShapes"
+        mc:Ignorable="d"
+        Title="PolylineDemo" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Polyline Stroke="Red">
+            <Polyline.Points>
+                <PointCollection>
+                    <Point X="10" Y="10"/>
+                    <Point X="200" Y="100"/>
+                </PointCollection>
+            </Polyline.Points>
+        </Polyline>
+        <Polyline Points="10,10 200,10 200,210 10,210 10,10" Stroke="Red"/>
+        <Polygon Points="10 10 50 10 50 60 10 60" Stroke="Green"/>
+    </Grid>
+</Window>

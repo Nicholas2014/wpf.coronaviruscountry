@@ -6,23 +6,179 @@
              xmlns:local="clr-namespace:MediaViewer"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Storyboard x:Key="tipStoryboard" Storyboard.TargetName="tipBox" >
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Left)">
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="115"/>
+                <DiscreteDoubleKeyFrame KeyTime="00:00:02" Value="150"/>
+                <DiscreteDoubleKeyFrame KeyTime="00:00:04" Value="185"/>
+                <DiscreteDoubleKeyFrame KeyTime="00:00:06" Value="280"/>
+            </DoubleAnimationUsingKeyFrames>
+            <StringAnimationUsingKeyFrames Storyboard.TargetProperty="Tag">
+                <DiscreteStringKeyFrame KeyTime="00:00:00" Value="Stops media when playing."/>
+                <DiscreteStringKeyFrame KeyTime="00:00:02" Value="Plays media, or pauses currently playing media." />
+                <DiscreteStringKeyFrame KeyTime="00:00:04" Value="Toggles mute." />
+                <DiscreteStringKeyFrame KeyTime="00:00:06" Value="Controls the volume." />
+            </StringAnimationUsingKeyFrames>
+            <ParallelTimeline Storyboard.TargetProperty="Opacity">
+                <DoubleAnimation BeginTime="00:00:00" To="1"/>
+                <DoubleAnimation BeginTime="00:00:08" To="0"/>
+            </ParallelTimeline>
+            <ParallelTimeline Storyboard.TargetName="progressSlider" Storyboard.TargetProperty="Opacity">
+                <DoubleAnimation BeginTime="00:00:00" To="0"/>
+                <DoubleAnimation BeginTime="00:00:08" To="1"/>
+            </ParallelTimeline>
+        </Storyboard>
+        <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/DefaultStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <DockPanel>
-        <Grid DockPanel.Dock="Bottom">
+        <Grid DockPanel.Dock="Bottom" HorizontalAlignment="Center" Width="400" Height="50" Background="{StaticResource MediaControlPanelBackground}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="2" Content="Stop" Click="Stop_Click"/>
-            <Button Grid.Column="3" Content="Play" Click="Play_Click"/>
-            <ToggleButton Grid.Column="4" Content="Mute" IsChecked="{Binding ElementName=mediaElement,Path=IsMuted}"/>
-            <Slider Grid.Column="5"  Minimum="0" Maximum="1" Value="{Binding ElementName=mediaElement,Path=Volume}"/>
+            <Canvas VerticalAlignment="Top" Margin="0 6 0 0">
+                <StackPanel x:Name="tipBox" Canvas.Bottom="0" Opacity="0">
+                    <Border CornerRadius="4" SnapsToDevicePixels="True" Width="100" Padding="4"
+                            Background="{StaticResource paleBrush}" BorderBrush="{StaticResource orangeBrush}" BorderThickness="1">
+                        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="{Binding ElementName=tipBox,Path=Tag}"/>
+                    </Border>
+                    <Path Margin="0 -1 0 0" SnapsToDevicePixels="True" Stroke="{StaticResource orangeBrush}"
+                          Fill="{StaticResource paleBrush}" Data="M40,0 L50,10 60,0"/>
+                </StackPanel>
+            </Canvas>
+            <Button Style="{StaticResource mediaButtonStyle}" Content="Help">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard Storyboard="{StaticResource tipStoryboard}"/>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Grid Grid.Column="1" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Click="Stop_Click" Style="{StaticResource mediaButtonStyle}">
+                    <!--<Rectangle Width="18" Height="20" Fill="{StaticResource redBrush}" Stroke="{StaticResource orangeBrush}" StrokeThickness="1" RadiusX="1" RadiusY="1"/>-->
+                    <Border Width="18" Height="20" Background="{StaticResource redRadial}" CornerRadius="1" BorderBrush="{StaticResource controlOutline}" BorderThickness="1">
+                        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 1 0 0" Width="15" Height="10" RadiusX="1" RadiusY="1" Fill="{StaticResource glossBrush}"/>
+                    </Border>
+                </Button>
+                <Button Grid.Column="1" Click="Play_Click" Style="{StaticResource fancyButtonStyle}">
+                    <Grid Margin="4 0 0 0">
+                        <Polygon Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Points="0,0 18,10 0,18">
+                            <Polygon.Style>
+                                <Style TargetType="{x:Type Polygon}">
+                                    <Style.Triggers>
+                                        <Trigger Property="DataContext" Value="Playing">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Polygon.Style>
+                        </Polygon>
+                        <Canvas>
+                            <Rectangle Height="18" Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Width="6"/>
+                            <Rectangle Height="18" Fill="{StaticResource yellowGradient}" Stroke="{StaticResource chromeOutline}" Width="6" Canvas.Left="8"/>
+                            <Canvas.Style>
+                                <Style TargetType="{x:Type Canvas}">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="DataContext" Value="Playing">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Canvas.Style>
+                        </Canvas>
+                    </Grid>
+                </Button>
+                <ToggleButton Grid.Column="2" Style="{StaticResource mediaButtonStyle}" IsChecked="{Binding ElementName=mediaElement,Path=IsMuted}">
+                    <Grid>
+                        <Canvas Width="20" Height="20">
+                            <!--the speaker-->
+                            <Path Fill="{StaticResource redRadial}" Stroke="{StaticResource controlOutline}" StrokeLineJoin="Round">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="12,5" IsClosed="True">
+                                            <LineSegment Point="0,6"/>
+                                            <PolyLineSegment Points="0,14 12,15 17,20"/>
+                                            <ArcSegment Point="17,0" Size="30,30"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <!--highlight-->
+                            <Path Fill="{StaticResource glossBrush}">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="13,6" IsClosed="True">
+                                            <PolyLineSegment Points="1,7 1,11 17.5,11"/>
+                                            <ArcSegment Point="16.5,2" Size="30,30"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <!--sound waves-->
+                            <Polygon Points="20,5 25,0 27,3" Fill="{StaticResource textBrush}"/>
+                            <Polygon Points="20,10 28,9 27,6" Fill="{StaticResource textBrush}"/>
+                            <Polygon Points="20,13 26,17 27,13" Fill="{StaticResource textBrush}"/>
+                            <Polygon Points="20,17 24,21 26,18" Fill="{StaticResource textBrush}"/>
+                        </Canvas>
+                        <Canvas>
+                            <Canvas.Style>
+                                <Style TargetType="{x:Type Canvas}">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=mediaElement,Path=IsMuted}" Value="true">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Canvas.Style>
+                            <Ellipse Width="20" Height="20" Stroke="{DynamicResource bgBrush}" StrokeThickness="3" Canvas.Left="0" Canvas.Top="0"/>
+                            <Path Width="13.498" Height="16.446" Fill="{x:Null}" Stroke="{DynamicResource bgBrush}" StrokeThickness="3" Canvas.Left="3.442" Canvas.Top="1.319"
+                                  Data="M4.9424596,16.265143 L15.440304,2.8191997"/>
+                        </Canvas>
+                    </Grid>
+                </ToggleButton>
+            </Grid>
+            <Slider Grid.Column="2" VerticalAlignment="Center" Margin="0 0 10 0" Minimum="0" Maximum="1" Value="{Binding ElementName=mediaElement,Path=Volume}"/>
         </Grid>
         <Slider DockPanel.Dock="Bottom" x:Name="progressSlider" MinHeight="0" LargeChange="1000" PreviewMouseLeftButtonDown="progressSlider_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="progressSlider_PreviewMouseLeftButtonUp"/>
-        <MediaElement DockPanel.Dock="Top" x:Name="mediaElement" LoadedBehavior="Manual" MediaOpened="mediaElement_MediaOpened" MediaEnded="mediaElement_MediaEnded"/>
+        <!--<MediaElement DockPanel.Dock="Top" x:Name="mediaElement" LoadedBehavior="Manual" MediaOpened="mediaElement_MediaOpened" MediaEnded="mediaElement_MediaEnded"/>-->
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <MediaElement  x:Name="mediaElement" VerticalAlignment="Bottom" LoadedBehavior="Manual" MediaOpened="mediaElement_MediaOpened" MediaEnded="mediaElement_MediaEnded"/>
+            <Rectangle x:Name="reflection" Grid.Row="1" Width="{Binding ElementName=mediaElement,Path=ActualWidth}" MinHeight="24">
+                <Rectangle.Fill>
+                    <VisualBrush Visual="{Binding ElementName=mediaElement}">
+                        <VisualBrush.Transform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <TranslateTransform Y="{Binding ElementName=reflection,Path=ActualHeight}"/>
+                            </TransformGroup>
+                        </VisualBrush.Transform>
+                    </VisualBrush>
+                </Rectangle.Fill>
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.5 0.5" StartPoint="0.5 0">
+                        <GradientStop Color="#72000000" Offset="0"/>
+                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+
+        </Grid>
     </DockPanel>
 </UserControl>

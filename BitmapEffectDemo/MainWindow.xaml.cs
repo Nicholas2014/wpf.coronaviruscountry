@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlignmentAndMargin
+namespace BitmapEffectDemo
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -23,11 +23,6 @@ namespace AlignmentAndMargin
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("password is: " + pwd.Password + " securepassword: " + pwd.SecurePassword.ToString());
         }
     }
 }

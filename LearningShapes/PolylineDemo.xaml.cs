@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AlignmentAndMargin
+namespace LearningShapes
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// PolylineDemo.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PolylineDemo : Window
     {
-        public MainWindow()
+        public PolylineDemo()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("password is: " + pwd.Password + " securepassword: " + pwd.SecurePassword.ToString());
         }
     }
 }
