@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleTrader.Domain.Models;
+﻿using SimpleTrader.Domain.Models;
 using SimpleTrader.Domain.Services;
-using SimpleTrader.WPF.Models;
 
 namespace SimpleTrader.WPF.ViewModels
 {
-    public class MajorIndexListingViewModel : ObservableObject
+    public class MajorIndexListingViewModel : ViewModelBase
     {
         private readonly IMajorIndexService _majorIndexService;
 
